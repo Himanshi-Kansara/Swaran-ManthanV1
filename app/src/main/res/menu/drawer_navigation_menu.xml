@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <group>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_person_black_24dp"
+                android:title="Signup/Signin" />
+        </group>
+    <group>
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@drawable/ic_contact_mail_black_24dp"
+            android:title="Contact Us" />
+    </group>
+    <group>
+            <item
+                android:id="@+id/nav_aboutus"
+                android:icon="@drawable/ic_assignment_ind_black_24dp"
+                android:title="About Us" />
+    </group>
+
+    <group>
+            <item
+                android:id="@+id/nav_policy"
+                android:icon="@drawable/ic_assignment_black_24dp"
+                android:title="Privacy Policy" />
+        </group>
+    </menu>
