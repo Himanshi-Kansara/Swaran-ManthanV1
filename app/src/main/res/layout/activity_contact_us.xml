@@ -9,14 +9,14 @@
     <LinearLayout
         android:id="@+id/loginTool"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:paddingHorizontal="15dp"
         android:background="@color/colorPrimaryDark">
         <TextView
             android:id="@+id/backContact"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/ic_chevron_left_black_24dp" />
 
@@ -41,8 +41,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/ic_location_on_black_24dp" />
             <TextView
@@ -64,8 +64,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/ic_email_black_24dp" />
             <TextView
@@ -87,8 +87,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/ic_phone_black_24dp" />
             <TextView
@@ -99,6 +99,41 @@
                 android:textSize="15sp"
                 android:textColor="#535252"
                 android:layout_marginHorizontal="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30dp"
+            android:padding="15dp"
+            android:background="@drawable/round_card_contactus"
+            android:layout_marginTop="30dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/facebook"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:src="@drawable/instagram"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:src="@drawable/twitter"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:src="@drawable/printrest"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:src="@drawable/whatsapp"/>
         </LinearLayout>
 
     </LinearLayout>

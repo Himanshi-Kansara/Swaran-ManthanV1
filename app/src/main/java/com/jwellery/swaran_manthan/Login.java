@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,17 +42,18 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
     private EditText email, password, name;
-    private TextView register;
-    private TextView backArrow;
+    private TextView backArrow, forgetPswd, register;
     private RelativeLayout signin;
     RequestQueue MyRequestQueuereg;
     private String LoginUrl  = "http://13.233.16.255:8082/customer/login";
     public String loginToken;
+    public SharedPreferences sharedPreferences;
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sharedPreferences = Login.this.getSharedPreferences("TokenAgent", Context.MODE_PRIVATE);
         initViews();
         loginToken = randomAlphaNumeric(4);
         MyRequestQueuereg = Volley.newRequestQueue(this);
@@ -63,6 +66,8 @@ public class Login extends AppCompatActivity {
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("Pressed", "");
+                Toast.makeText( Login.this,"Pressed", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(Login.this,MainActivity.class));
             }
         });
@@ -76,6 +81,12 @@ public class Login extends AppCompatActivity {
                 customerLogin(secondPassword);
             }
         });
+        forgetPswd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
     private void initViews() {
         email = findViewById(R.id.email);
@@ -84,6 +95,7 @@ public class Login extends AppCompatActivity {
         signin = findViewById(R.id.login);
         name = findViewById(R.id.name);
         backArrow = findViewById(R.id.backlogin);
+        forgetPswd = findViewById(R.id.forgetPswd);
     }
     public static String md5(final String s) {
         final String MD5 = "MD5";
@@ -145,6 +157,8 @@ public class Login extends AppCompatActivity {
                             Log.e("Dataccc",status);
                             if(Integer.parseInt(status)== 200) {
                                 DynamicToast.makeSuccess(Login.this,"Successfully Login").show();
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("token", loginToken);
                             }
                         }
                         catch (JSONException e) {

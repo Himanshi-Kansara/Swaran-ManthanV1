@@ -91,7 +91,15 @@
                 android:textSize="18sp"
                 android:textStyle="normal" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <TextView
+            android:id="@+id/forgetPswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="textEnd"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
         <RelativeLayout
             android:id="@+id/login"
             android:layout_width="170dp"
